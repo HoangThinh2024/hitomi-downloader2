@@ -232,55 +232,43 @@ fn create_pdf(comic_download_dir: &Path, pdf_path: &Path) -> anyhow::Result<()> 
 
     let mut doc = Document::with_version("1.5");
     let pages_id = doc.new_object_id();
-    let mut page_ids = vec![];
-    
-    // Group to track and reuse duplicate images (same file hash)
-    let mut image_cache: std::collections::HashMap<Vec<u8>, (lopdf::ObjectId, u32, u32)> = std::collections::HashMap::new();
+    let mut page_ids = Vec::with_capacity(image_paths.len());
 
-    for image_path in image_paths {
+    // Process images one at a time to minimize memory usage
+    for (idx, image_path) in image_paths.iter().enumerate() {
         if !image_path.is_file() {
             continue;
         }
 
-        let (width, height) = image::image_dimensions(&image_path).context(format!(
+        // Log progress for large batches
+        if idx % 50 == 0 {
+            tracing::info!("Processing image {}/{}", idx + 1, image_paths.len());
+        }
+
+        // Get image dimensions without loading the full image
+        let (width, height) = image::image_dimensions(image_path).context(format!(
             "Failed to get dimensions of `{}`",
             image_path.display()
         ))?;
         
-        // Read the image file
-        let buffer = read_image_to_buffer(&image_path).context(format!(
-            "Failed to read `{}` into buffer",
-            image_path.display()
-        ))?;
-        
-        // Check if we've already processed this exact image (by content hash)
-        let img_id = if let Some(&(cached_id, cached_w, cached_h)) = image_cache.get(&buffer) {
-            // Reuse the existing image object if dimensions match
-            if cached_w == width && cached_h == height {
-                cached_id
-            } else {
-                // Different dimensions, need to create new object
-                let image_stream = lopdf::xobject::image_from(buffer.clone()).context(format!(
-                    "Failed to create image stream for `{}`",
-                    image_path.display()
-                ))?;
-                let new_id = doc.add_object(image_stream);
-                image_cache.insert(buffer, (new_id, width, height));
-                new_id
-            }
-        } else {
-            // New image, create stream and cache it
-            let image_stream = lopdf::xobject::image_from(buffer.clone()).context(format!(
+        // Read and process image in a scoped block to ensure buffer is freed immediately
+        let img_id = {
+            let buffer = read_image_to_buffer(image_path).context(format!(
+                "Failed to read `{}` into buffer",
+                image_path.display()
+            ))?;
+            
+            let image_stream = lopdf::xobject::image_from(buffer).context(format!(
                 "Failed to create image stream for `{}`",
                 image_path.display()
             ))?;
-            let new_id = doc.add_object(image_stream);
-            image_cache.insert(buffer, (new_id, width, height));
-            new_id
-        };
+            
+            doc.add_object(image_stream)
+        }; // buffer and image_stream are dropped here
         
         // Image name for the Do operation to display the image on the page
         let img_name = format!("X{}", img_id.0);
+        
         // Used to set image position and size on the page
         let cm_operation = Operation::new(
             "cm",
@@ -293,23 +281,26 @@ fn create_pdf(comic_download_dir: &Path, pdf_path: &Path) -> anyhow::Result<()> 
                 0.into(),
             ],
         );
+        
         // Used to display the image
         let do_operation = Operation::new("Do", vec![Object::Name(img_name.as_bytes().to_vec())]);
+        
         // Create a page, set the image position and size, and then display the image
-        // Since we're creating a PDF from scratch, there's no need to use q and Q operations to save and restore graphics state
         let content = Content {
             operations: vec![cm_operation, do_operation],
         };
         let content_id = doc.add_object(Stream::new(dictionary! {}, content.encode()?));
+        
         let page_id = doc.add_object(dictionary! {
             "Type" => "Page",
             "Parent" => pages_id,
             "Contents" => content_id,
             "MediaBox" => vec![0.into(), 0.into(), width.into(), height.into()],
         });
+        
         // Add the image as XObject to the document
-        // The Do operation can only reference XObject (that's why we defined the Do operation with img_name as parameter, not img_id)
         doc.add_xobject(page_id, img_name.as_bytes(), img_id)?;
+        
         // Record the ID of the newly created page
         page_ids.push(page_id);
     }
@@ -327,7 +318,8 @@ fn create_pdf(comic_download_dir: &Path, pdf_path: &Path) -> anyhow::Result<()> 
     });
     doc.trailer.set("Root", catalog_id);
 
-    doc.compress();
+    // Skip compression for large PDFs to avoid hanging
+    // doc.compress();
 
     doc.save(pdf_path)
         .context(format!("Failed to save `{}`", pdf_path.display()))?;
@@ -336,10 +328,24 @@ fn create_pdf(comic_download_dir: &Path, pdf_path: &Path) -> anyhow::Result<()> 
 
 /// Read image data from `image_path` into a buffer
 fn read_image_to_buffer(image_path: &Path) -> anyhow::Result<Vec<u8>> {
+    // Get file size first to pre-allocate buffer
+    let metadata = std::fs::metadata(image_path)
+        .context(format!("Failed to get metadata for `{}`", image_path.display()))?;
+    let file_size = metadata.len() as usize;
+    
+    // Safety check: warn if file is very large (>50MB)
+    if file_size > 50 * 1024 * 1024 {
+        tracing::warn!(
+            "Large image file detected: {} ({} MB)",
+            image_path.display(),
+            file_size / (1024 * 1024)
+        );
+    }
+    
     let file = std::fs::File::open(image_path)
         .context(format!("Failed to open `{}`", image_path.display()))?;
     let mut reader = std::io::BufReader::new(file);
-    let mut buffer = vec![];
+    let mut buffer = Vec::with_capacity(file_size);
     reader
         .read_to_end(&mut buffer)
         .context(format!("Failed to read `{}`", image_path.display()))?;
