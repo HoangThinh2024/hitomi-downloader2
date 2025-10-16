@@ -405,3 +405,13 @@ pub fn get_synced_comic(app: AppHandle, mut comic: Comic) -> CommandResult<Comic
 
     Ok(comic)
 }
+
+#[tauri::command(async)]
+#[specta::specta]
+#[allow(clippy::needless_pass_by_value)]
+pub fn clear_browsing_data(hitomi_client: State<HitomiClient>) -> CommandResult<()> {
+    // Reload HTTP clients to clear any cached connections or data
+    hitomi_client.reload_client();
+    tracing::info!("Browsing data cleared - HTTP clients reloaded");
+    Ok(())
+}

@@ -233,26 +233,52 @@ fn create_pdf(comic_download_dir: &Path, pdf_path: &Path) -> anyhow::Result<()> 
     let mut doc = Document::with_version("1.5");
     let pages_id = doc.new_object_id();
     let mut page_ids = vec![];
+    
+    // Group to track and reuse duplicate images (same file hash)
+    let mut image_cache: std::collections::HashMap<Vec<u8>, (lopdf::ObjectId, u32, u32)> = std::collections::HashMap::new();
 
     for image_path in image_paths {
         if !image_path.is_file() {
             continue;
         }
 
-        let buffer = read_image_to_buffer(&image_path).context(format!(
-            "Failed to read `{}` into buffer",
-            image_path.display()
-        ))?;
         let (width, height) = image::image_dimensions(&image_path).context(format!(
             "Failed to get dimensions of `{}`",
             image_path.display()
         ))?;
-        let image_stream = lopdf::xobject::image_from(buffer).context(format!(
-            "Failed to create image stream for `{}`",
+        
+        // Read the image file
+        let buffer = read_image_to_buffer(&image_path).context(format!(
+            "Failed to read `{}` into buffer",
             image_path.display()
         ))?;
-        // Add image stream to doc
-        let img_id = doc.add_object(image_stream);
+        
+        // Check if we've already processed this exact image (by content hash)
+        let img_id = if let Some(&(cached_id, cached_w, cached_h)) = image_cache.get(&buffer) {
+            // Reuse the existing image object if dimensions match
+            if cached_w == width && cached_h == height {
+                cached_id
+            } else {
+                // Different dimensions, need to create new object
+                let image_stream = lopdf::xobject::image_from(buffer.clone()).context(format!(
+                    "Failed to create image stream for `{}`",
+                    image_path.display()
+                ))?;
+                let new_id = doc.add_object(image_stream);
+                image_cache.insert(buffer, (new_id, width, height));
+                new_id
+            }
+        } else {
+            // New image, create stream and cache it
+            let image_stream = lopdf::xobject::image_from(buffer.clone()).context(format!(
+                "Failed to create image stream for `{}`",
+                image_path.display()
+            ))?;
+            let new_id = doc.add_object(image_stream);
+            image_cache.insert(buffer, (new_id, width, height));
+            new_id
+        };
+        
         // Image name for the Do operation to display the image on the page
         let img_name = format!("X{}", img_id.0);
         // Used to set image position and size on the page

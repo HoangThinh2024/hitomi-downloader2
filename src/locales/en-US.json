@@ -52,6 +52,9 @@
     "no_proxy": "No Proxy",
     "custom_proxy": "Custom",
     "open_config_directory": "Open Config Folder",
+    "clear_browsing_data": "Clear Browsing Data",
+    "clear_browsing_data_success": "Browsing data cleared successfully",
+    "clear_browsing_data_error": "Failed to clear browsing data",
     "directory_format": {
       "name": "Folder Format",
       "directory_level_tips": "Use the forward slash {slash} to separate directory levels",

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { useMessage } from 'naive-ui'
 import { useStore } from '../store'
 import { computed, ref } from 'vue'
 import { path } from '@tauri-apps/api'
@@ -7,6 +8,7 @@ import { appDataDir } from '@tauri-apps/api/path'
 import { commands } from '../bindings.ts'
 
 const { t } = useI18n()
+const message = useMessage()
 
 const store = useStore()
 
@@ -22,6 +24,16 @@ async function showConfigInFileManager() {
   const configPath = await path.join(await appDataDir(), configName)
   const result = await commands.showPathInFileManager(configPath)
   if (result.status === 'error') {
+    console.error(result.error)
+  }
+}
+
+async function clearBrowsingData() {
+  const result = await commands.clearBrowsingData()
+  if (result.status === 'ok') {
+    message.success(t('settings_dialog.clear_browsing_data_success'))
+  } else {
+    message.error(t('settings_dialog.clear_browsing_data_error'))
     console.error(result.error)
   }
 }
@@ -120,9 +132,14 @@ async function showConfigInFileManager() {
             </n-input-group>
           </template>
         </n-tooltip>
-        <n-button class="ml-auto mt-2" size="small" @click="showConfigInFileManager">
-          {{ t('settings_dialog.open_config_directory') }}
-        </n-button>
+        <div class="flex gap-2 ml-auto mt-2">
+          <n-button size="small" @click="clearBrowsingData">
+            {{ t('settings_dialog.clear_browsing_data') }}
+          </n-button>
+          <n-button size="small" @click="showConfigInFileManager">
+            {{ t('settings_dialog.open_config_directory') }}
+          </n-button>
+        </div>
       </div>
     </n-dialog>
   </n-modal>
