@@ -1,9 +1,6 @@
-<p align="center">
-    <img src="https://github.com/user-attachments/assets/efd0470a-f5cb-4c1d-a0c3-3f5c39113933" style="align-self: center"/>
-</p>
-
-
 # 📚 Hitomi Downloader
+
+![logo](https://github.com/user-attachments/assets/efd0470a-f5cb-4c1d-a0c3-3f5c39113933)
 
 A GUI-based multi-threaded downloader for hitomi hitomi.la
 
@@ -13,7 +10,7 @@ English / [简体中文](./README.zh-CN.md) / [Tiếng Việt](./README.vi-VN.md
 
 Pre-compiled packages are available on the [Releases page](https://github.com/lanyeeee/hitomi-downloader/releases). Just download and use.
 
-**Enjoying this project? feel free to support it with a GitHub Star⭐! Your support motivates me to keep updating and maintaining🙏**
+Enjoying this project? Feel free to support it with a GitHub Star⭐! Your support motivates me to keep updating and maintaining🙏
 
 ## ✨ Features
 
@@ -30,28 +27,25 @@ Pre-compiled packages are available on the [Releases page](https://github.com/la
 ![image](https://github.com/user-attachments/assets/fd93fd2f-db16-43b6-86cf-aa643eb572c8)
 ![image](https://github.com/user-attachments/assets/81a859f2-2a06-4eca-b45f-4f6555cc62c0)
 
-
 ## 📖 How to Use
 
-1.  In `Search` tab search for keywords.
-2.  Click the `Download` button directly on the comic card, or click the cover/title to go to the `Comic` tab, where you'll also find a `Download` button.
-3.  After downloading, click the `Open Folder` button to check the results.
+1. In `Search` tab search for keywords.
+2. Click the `Download` button directly on the comic card, or click the cover/title to go to the `Comic` tab, where you'll also find a `Download` button.
+3. After downloading, click the `Open Folder` button to check the results.
 
 **By the way, you can export to PDF/CBZ(ZIP) in the `Local` tab.**
 
 📹 The video below demonstrates the full usage process. **It's Safe For Work, so feel free to watch.**
 
-https://github.com/user-attachments/assets/d2d0e577-c074-41ca-996f-445d52e2cce5
-
-
+[Demo video](https://github.com/user-attachments/assets/d2d0e577-c074-41ca-996f-445d52e2cce5)
 
 ## ⚠️ About Antivirus False Positives
 
 For individually developed projects, this issue is almost unavoidable (~~because it requires purchasing a digital certificate for software signing, or even paying protection fees to antivirus companies~~).
 The only solutions I can think of are:
 
-1.  Compile it yourself according to the **How to Build** instructions below.
-2.  Trust my promise that everything you download from the [Release page](https://github.com/lanyeeee/hitomi-downloader/releases) is safe.
+1. Compile it yourself according to the **How to Build** instructions below.
+2. Trust my promise that everything you download from the [Release page](https://github.com/lanyeeee/hitomi-downloader/releases) is safe.
 
 ## 🛠️ How to Build
 
@@ -60,9 +54,9 @@ Building is very simple, just 3 commands.
 
 #### 📋 Prerequisites
 
--   [Rust](https://www.rust-lang.org/tools/install)
--   [Node](https://nodejs.org/en)
--   [pnpm](https://pnpm.io/installation)
+- [Rust](https://www.rust-lang.org/tools/install)
+- [Node](https://nodejs.org/en)
+- [pnpm](https://pnpm.io/installation)
 
 #### 📝 Steps
 
@@ -91,10 +85,10 @@ Help with translating this project is welcome! If you want to add a new language
 
 Main steps for adding a new language:
 
-1.  Create a new language file in the `src/locales` directory.
-2.  Translate the key-value pairs, following the format of the existing language files.
-3.  Register the new language in `src/locales/index.ts`.
-4.  Submit a PR.
+1. Create a new language file in the `src/locales` directory.
+2. Translate the key-value pairs, following the format of the existing language files.
+3. Register the new language in `src/locales/index.ts`.
+4. Submit a PR.
 
 ## 🤝 Submitting PR
 
@@ -104,18 +98,18 @@ Main steps for adding a new language:
 
 For other cases, feel free to submit a PR directly, for example:
 
-1.  🔧 Improvements to existing features.
-2.  🐛 Bug fixes.
-3.  🌐 Adding new language support.
-4.  ⚡ Using a more lightweight library to implement existing features.
-5.  📝 Documentation revisions.
-6.  ⬆️  Pull Request for upgrading/updating dependencies will also be accepted.
+1. 🔧 Improvements to existing features.
+2. 🐛 Bug fixes.
+3. 🌐 Adding new language support.
+4. ⚡ Using a more lightweight library to implement existing features.
+5. 📝 Documentation revisions.
+6. ⬆️  Pull Request for upgrading/updating dependencies will also be accepted.
 
 ## ⚠️ Disclaimer
 
--   This tool is intended for learning, research, and communication purposes only. Users should assume all risks associated with its use.
--   The author is not responsible for any losses, legal disputes, or other consequences resulting from the use of this tool.
--   The author is not responsible for the user's actions while using this tool, including but not limited to actions that violate laws or the rights of any third party.
+- This tool is intended for learning, research, and communication purposes only. Users should assume all risks associated with its use.
+- The author is not responsible for any losses, legal disputes, or other consequences resulting from the use of this tool.
+- The author is not responsible for the user's actions while using this tool, including but not limited to actions that violate laws or the rights of any third party.
 
 ## Thanks
 
