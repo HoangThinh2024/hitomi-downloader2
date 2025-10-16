@@ -7,10 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+.pnpm-store
+
+# Build output
 dist
 dist-ssr
 *.local
+
+# Cache directories
+.cache
+.temp
+.tmp
+*.tsbuildinfo
 
 # Editor directories and files
 .vscode/*
@@ -23,4 +33,10 @@ dist-ssr
 *.sln
 *.sw?
 
+# OS files
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# Guide (nếu bạn muốn bỏ ignore Guide, xóa dòng này)
 Guide
