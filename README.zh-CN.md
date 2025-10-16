@@ -7,7 +7,7 @@
 
 一个带GUI的用于 hitomi hitomi.la 的多线程下载器
 
-[English](./README.md) / 简体中文
+[English](./README.md) / 简体中文 / [Tiếng Việt](./README.vi-VN.md)
 
 ## 📥 快速下载
 

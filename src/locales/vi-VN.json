@@ -1,0 +1,120 @@
+{
+  "name": "Tiếng Việt",
+  "common": {
+    "artist": "Tác giả",
+    "group": "Nhóm",
+    "series": "Series",
+    "character": "Nhân vật",
+    "type": "Loại",
+    "language": "Ngôn ngữ",
+    "tag": "Thẻ tag",
+    "open_directory": "Mở thư mục",
+    "export_pdf": "Xuất PDF",
+    "export_cbz": "Xuất CBZ",
+    "download_directory": "Thư mục tải về",
+    "export_directory": "Thư mục xuất",
+    "select_all": "Chọn tất cả",
+    "continue": "Tiếp tục",
+    "pause": "Tạm dừng",
+    "cancel": "Hủy"
+  },
+  "app_content": {
+    "save_config_success": "Lưu cấu hình thành công",
+    "logs_directory_size_too_big": "Thư mục nhật ký vượt quá 50MB",
+    "log_cleanup_reminder": "Vui lòng dọn dẹp tệp nhật ký sớm",
+    "click_top_center": "Nhấp vào giữa trên cùng",
+    "there_is": "Có",
+    "you_can_also_uncheck": "Bạn cũng có thể bỏ chọn",
+    "this_will_disable_file_logging": "Điều này sẽ tắt ghi nhật ký vào tệp"
+  },
+  "log_viewer": {
+    "name": "Nhật ký",
+    "logs_directory_size": "Kích thước thư mục nhật ký",
+    "search_placeholder": "Tìm kiếm nhật ký...",
+    "open_logs_directory": "Mở thư mục nhật ký",
+    "enable_file_logging": "Bật ghi nhật ký vào tệp",
+    "clear_log_viewer": "Xóa trình xem nhật ký"
+  },
+  "about_dialog": {
+    "name": "Về chương trình",
+    "support_message": "Thích dự án này? Hãy ủng hộ bằng {github} Star⭐!",
+    "motivation_message": "Sự ủng hộ của bạn thúc đẩy tôi tiếp tục cập nhật và duy trì🙏",
+    "software_version": "Phiên bản",
+    "source_code_repository": "Mã nguồn",
+    "feedback": "Phản hồi"
+  },
+  "settings_dialog": {
+    "name": "Cài đặt",
+    "download_format": "Định dạng tải về",
+    "avif_warning": "Không thể xuất sang PDF",
+    "proxy_mode": "Chế độ proxy",
+    "system_proxy": "Hệ thống",
+    "no_proxy": "Không proxy",
+    "custom_proxy": "Tùy chỉnh",
+    "open_config_directory": "Mở thư mục cấu hình",
+    "clear_browsing_data": "Xóa dữ liệu duyệt web",
+    "clear_browsing_data_success": "Đã xóa dữ liệu duyệt web thành công",
+    "clear_browsing_data_error": "Lỗi khi xóa dữ liệu duyệt web",
+    "directory_format": {
+      "name": "Định dạng thư mục",
+      "directory_level_tips": "Sử dụng dấu gạch chéo {slash} để phân cách cấp thư mục",
+      "available_fields": "Các trường có sẵn",
+      "id": "ID truyện",
+      "title": "Tiêu đề truyện",
+      "type": "Loại truyện (ví dụ: doujinshi, manga, imageset)",
+      "artists": "Tác giả truyện",
+      "language": "Tên ngôn ngữ",
+      "language_localname": "Tên ngôn ngữ bản địa",
+      "for_example": "Ví dụ",
+      "directory_result": "Tải truyện 2829145 sẽ tạo 3 thư mục lồng nhau:"
+    }
+  },
+  "search_pane": {
+    "name": "Tìm kiếm",
+    "search_by_query": "Từ khóa",
+    "search_by_id": "ID truyện (Liên kết cũng được)",
+    "searching": "Đang tìm kiếm...",
+    "searching_warning": "Đang có tìm kiếm đang thực hiện, vui lòng thử lại sau",
+    "search_success": "Tìm kiếm hoàn tất",
+    "comic_id_invalid": "Định dạng ID truyện không hợp lệ",
+    "enter_comic_id_or_url": "Vui lòng nhập ID truyện hoặc URL"
+  },
+  "downloaded_pane": {
+    "name": "Đã tải",
+    "empty_description": "Vui lòng tải truyện trước",
+    "pdf_exporting": "Đang xuất PDF",
+    "pdf_export_error": "Xuất PDF thất bại",
+    "pdf_exported": "Đã xuất PDF",
+    "cbz_exporting": "Đang xuất CBZ",
+    "cbz_export_error": "Xuất CBZ thất bại",
+    "cbz_exported": "Đã xuất CBZ"
+  },
+  "comic_pane": {
+    "name": "Truyện",
+    "other_language": "Ngôn ngữ khác",
+    "empty_description": "Vui lòng chọn một truyện (@:search_pane.name @:downloaded_pane.name)",
+    "related": "Truyện liên quan"
+  },
+  "downloading_pane": {
+    "name": "Đang tải",
+    "pending": "Chờ xử lý",
+    "downloading": "Đang tải",
+    "paused": "Đã tạm dừng",
+    "cancelled": "Đã hủy",
+    "completed": "Hoàn thành",
+    "failed": "Thất bại",
+    "download_speed": "Tốc độ tải"
+  },
+  "uncompleted_progresses": {
+    "name": "Chưa hoàn thành",
+    "usage_tips": "Kéo chuột trái để chọn, nhấp chuột phải để mở menu, nhấp đúp để tạm dừng/tiếp tục"
+  },
+  "completed_progresses": {
+    "name": "Đã hoàn thành"
+  },
+  "download_button": {
+    "quick_download": "Tải về",
+    "resume_download": "Tiếp tục",
+    "download_again": "Tải lại"
+  }
+}
