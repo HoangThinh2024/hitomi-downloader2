@@ -18,6 +18,7 @@ use crate::{
     utils::get_app_handle,
 };
 
+#[allow(dead_code)]
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct LoginResp {
