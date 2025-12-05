@@ -247,7 +247,7 @@ For optimal performance on Ubuntu:
 - Use SSD storage for downloads
 - Ensure adequate RAM (4GB+ recommended)
 - Keep system updated
-- See [LINUX_OPTIMIZATION.md](./LINUX_OPTIMIZATION.md) for detailed optimizations
+- See [LINUX_OPTIMIZATION.md](../optimization/LINUX_OPTIMIZATION.md) for detailed optimizations
 
 ---
 
@@ -493,7 +493,7 @@ rm -rf src-tauri/target node_modules dist build-output
 - Dùng SSD cho thư mục tải xuống
 - Đảm bảo RAM đủ (khuyến nghị 4GB+)
 - Giữ hệ thống được cập nhật
-- Xem [LINUX_OPTIMIZATION.md](./LINUX_OPTIMIZATION.md) để biết chi tiết về tối ưu hóa
+- Xem [LINUX_OPTIMIZATION.md](../optimization/LINUX_OPTIMIZATION.md) để biết chi tiết về tối ưu hóa
 
 ---
 

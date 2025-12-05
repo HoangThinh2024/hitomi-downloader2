@@ -24,7 +24,7 @@ docker-compose up -d
 # Then open in browser: http://localhost:6080
 ```
 
-📖 See [DOCKER_GUIDE.md](./DOCKER_GUIDE.md) for complete Docker deployment instructions.
+📖 See [DOCKER_GUIDE.md](./docs/guides/DOCKER_GUIDE.md) for complete Docker deployment instructions.
 
 Enjoying this project? Feel free to support it with a GitHub Star⭐! Your support motivates me to keep updating and maintaining🙏
 
@@ -112,9 +112,9 @@ This application is optimized for **Ubuntu 24.04 LTS** with specific performance
 ```
 
 For detailed instructions including installation and uninstallation, see:
-- **[Ubuntu Build & Installation Guide](./UBUNTU_BUILD_GUIDE.md)** (English + Tiếng Việt)
-- [Linux Optimization Guide](./LINUX_OPTIMIZATION.md) (English)
-- [Hướng dẫn Tối ưu Linux](./LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
+- **[Ubuntu Build & Installation Guide](./docs/guides/UBUNTU_BUILD_GUIDE.md)** (English + Tiếng Việt)
+- [Linux Optimization Guide](./docs/optimization/LINUX_OPTIMIZATION.md) (English)
+- [Hướng dẫn Tối ưu Linux](./docs/optimization/LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
 
 ## 🐳 Docker Deployment
 
@@ -143,8 +143,8 @@ Default VNC password: `hitomi123`
 - ✅ Easy deployment and scaling
 
 ### Documentation
-- **[Docker Deployment Guide](./DOCKER_GUIDE.md)** - Complete setup and usage instructions
-- **[Web App Analysis](./WEB_APP_ANALYSIS.md)** - Technical details about web conversion
+- **[Docker Deployment Guide](./docs/guides/DOCKER_GUIDE.md)** - Complete setup and usage instructions
+- **[Web App Analysis](./docs/summary/WEB_APP_ANALYSIS.md)** - Technical details about web conversion
 
 ### GitHub Container Registry
 

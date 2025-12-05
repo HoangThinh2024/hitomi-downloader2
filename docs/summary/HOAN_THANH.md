@@ -9,7 +9,7 @@ Bạn yêu cầu:
 
 ## ✅ Những gì đã hoàn thành
 
-### 1. 📊 Phân tích Web App (WEB_APP_ANALYSIS.md)
+### 1. 📊 Phân tích Web App ([WEB_APP_ANALYSIS.md](./WEB_APP_ANALYSIS.md))
 
 **Kết luận:**
 - ✅ **CÓ THỂ** chuyển sang web app qua Docker + noVNC (ĐÃ LÀM XONG)
@@ -19,7 +19,7 @@ Bạn yêu cầu:
   2. Hybrid architecture (Có roadmap)
   3. Full web rewrite (Có roadmap đầy đủ)
 
-**File tạo:** `WEB_APP_ANALYSIS.md` (Song ngữ EN/VI)
+**File tạo:** [`WEB_APP_ANALYSIS.md`](./WEB_APP_ANALYSIS.md) (Song ngữ EN/VI)
 
 ### 2. 🐳 Docker Implementation
 
@@ -63,7 +63,7 @@ Bạn yêu cầu:
 - Multi-tag support (latest, develop, version tags)
 - Cache để build nhanh hơn
 
-#### b. `GITHUB_PACKAGES_GUIDE.md`
+#### b. [`GITHUB_PACKAGES_GUIDE.md`](../guides/GITHUB_PACKAGES_GUIDE.md)
 - Hướng dẫn từng bước enable GitHub Actions
 - Hướng dẫn configure permissions
 - Hướng dẫn trigger builds
@@ -75,7 +75,7 @@ Bạn yêu cầu:
 
 **3 hướng dẫn đầy đủ (Song ngữ EN/VI):**
 
-#### a. `DOCKER_GUIDE.md`
+#### a. [`DOCKER_GUIDE.md`](../guides/DOCKER_GUIDE.md)
 - Quick start guide
 - Installation methods
 - Configuration options
@@ -85,7 +85,7 @@ Bạn yêu cầu:
 - Troubleshooting
 - Cleanup instructions
 
-#### b. `WEB_APP_ANALYSIS.md`
+#### b. [`WEB_APP_ANALYSIS.md`](./WEB_APP_ANALYSIS.md)
 - Architectural analysis
 - Feasibility study
 - 3 conversion approaches
@@ -94,7 +94,7 @@ Bạn yêu cầu:
 - Code examples
 - Recommendations
 
-#### c. `GITHUB_PACKAGES_GUIDE.md`
+#### c. [`GITHUB_PACKAGES_GUIDE.md`](../guides/GITHUB_PACKAGES_GUIDE.md)
 - Step-by-step setup
 - Publishing workflow
 - Image management
@@ -102,7 +102,7 @@ Bạn yêu cầu:
 - Authentication
 - Troubleshooting
 
-#### d. README.md update
+#### d. [README.md](../../README.md) update
 - Thêm Docker deployment section
 - Quick start instructions
 - Links to detailed guides
@@ -175,10 +175,10 @@ docker run -d \
 - [x] .dockerignore optimization
 
 ### Documentation:
-- [x] DOCKER_GUIDE.md (EN + VI)
-- [x] WEB_APP_ANALYSIS.md (EN + VI)
-- [x] GITHUB_PACKAGES_GUIDE.md (EN + VI)
-- [x] README.md updates
+- [x] [DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md) (EN + VI)
+- [x] [WEB_APP_ANALYSIS.md](./WEB_APP_ANALYSIS.md) (EN + VI)
+- [x] [GITHUB_PACKAGES_GUIDE.md](../guides/GITHUB_PACKAGES_GUIDE.md) (EN + VI)
+- [x] [README.md](../../README.md) updates
 - [x] Quick start instructions
 - [x] Troubleshooting guides
 - [x] Best practices
@@ -214,11 +214,11 @@ docker compose up -d
 
 **Xong!** GitHub Actions sẽ tự động build và publish.
 
-Chi tiết đầy đủ trong `GITHUB_PACKAGES_GUIDE.md`
+Chi tiết đầy đủ trong [`GITHUB_PACKAGES_GUIDE.md`](../guides/GITHUB_PACKAGES_GUIDE.md)
 
 ### Option 3: Web App Full Rewrite (Nếu muốn)
 
-Xem roadmap chi tiết trong `WEB_APP_ANALYSIS.md`:
+Xem roadmap chi tiết trong [`WEB_APP_ANALYSIS.md`](./WEB_APP_ANALYSIS.md):
 - Phase 1: Backend API (4-6 weeks)
 - Phase 2: Frontend (3-4 weeks)
 - Phase 3: Testing (2-3 weeks)
@@ -236,10 +236,13 @@ hitomi-downloader2/
 ├── .github/
 │   └── workflows/
 │       └── docker-publish.yml      ✅ Auto build & publish
-├── DOCKER_GUIDE.md                 ✅ Docker hướng dẫn
-├── WEB_APP_ANALYSIS.md             ✅ Web app phân tích
-├── GITHUB_PACKAGES_GUIDE.md        ✅ Publishing hướng dẫn
-├── HOAN_THANH.md                   ✅ File này
+├── docs/
+│   ├── guides/
+│   │   ├── DOCKER_GUIDE.md         ✅ Docker hướng dẫn
+│   │   └── GITHUB_PACKAGES_GUIDE.md ✅ Publishing hướng dẫn
+│   └── summary/
+│       ├── WEB_APP_ANALYSIS.md     ✅ Web app phân tích
+│       └── HOAN_THANH.md           ✅ File này
 └── README.md                       ✅ Updated
 ```
 
@@ -252,9 +255,9 @@ hitomi-downloader2/
 4. Access từ bất kỳ device nào có browser
 
 ### ✅ Có hướng dẫn để làm:
-1. Publish lên GitHub Packages (GITHUB_PACKAGES_GUIDE.md)
-2. Configure advanced settings (DOCKER_GUIDE.md)
-3. Web app full rewrite nếu muốn (WEB_APP_ANALYSIS.md)
+1. Publish lên GitHub Packages ([GITHUB_PACKAGES_GUIDE.md](../guides/GITHUB_PACKAGES_GUIDE.md))
+2. Configure advanced settings ([DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md))
+3. Web app full rewrite nếu muốn ([WEB_APP_ANALYSIS.md](./WEB_APP_ANALYSIS.md))
 
 ### ✅ Production Ready:
 - Health checks ✓
@@ -266,9 +269,9 @@ hitomi-downloader2/
 ## 🆘 Nếu cần hỗ trợ
 
 ### Đọc documentation:
-1. `DOCKER_GUIDE.md` - Mọi thứ về Docker
-2. `GITHUB_PACKAGES_GUIDE.md` - Publishing
-3. `WEB_APP_ANALYSIS.md` - Technical details
+1. [`DOCKER_GUIDE.md`](../guides/DOCKER_GUIDE.md) - Mọi thứ về Docker
+2. [`GITHUB_PACKAGES_GUIDE.md`](../guides/GITHUB_PACKAGES_GUIDE.md) - Publishing
+3. [`WEB_APP_ANALYSIS.md`](./WEB_APP_ANALYSIS.md) - Technical details
 
 ### Check examples:
 ```bash

@@ -310,9 +310,9 @@ Hiệu suất mong đợi:
 
 ## Tài nguyên Bổ sung
 
-- [README Chính](./README.md)
-- [Chính sách Bảo mật](./SECURITY.md)
-- [README Tiếng Anh](./README.md)
+- [README Chính](../../README.md)
+- [Chính sách Bảo mật](../../SECURITY.md)
+- [README Tiếng Anh](../../README.md)
 - [English Linux Optimization Guide](./LINUX_OPTIMIZATION.md)
 - [GitHub Issues](https://github.com/lanyeeee/hitomi-downloader/issues)
 

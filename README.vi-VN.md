@@ -102,9 +102,9 @@ pnpm tauri build
 ```
 
 Để xem hướng dẫn chi tiết bao gồm cài đặt và gỡ bỏ:
-- **[Hướng dẫn Build & Cài đặt Ubuntu](./UBUNTU_BUILD_GUIDE.md)** (Tiếng Việt + English)
-- [Hướng dẫn Tối ưu Linux](./LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
-- [Linux Optimization Guide](./LINUX_OPTIMIZATION.md) (English)
+- **[Hướng dẫn Build & Cài đặt Ubuntu](./docs/guides/UBUNTU_BUILD_GUIDE.md)** (Tiếng Việt + English)
+- [Hướng dẫn Tối ưu Linux](./docs/optimization/LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
+- [Linux Optimization Guide](./docs/optimization/LINUX_OPTIMIZATION.md) (English)
 
 ## 🌐 Thêm ngôn ngữ mới
 

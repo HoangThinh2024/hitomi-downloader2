@@ -253,7 +253,7 @@ The Docker + noVNC approach provides immediate web access without major code cha
 1. ✅ Dockerfile with VNC/noVNC setup
 2. ✅ docker-compose.yml for easy deployment
 3. ✅ GitHub Actions workflow for automated builds
-4. ✅ Complete documentation (DOCKER_GUIDE.md)
+4. ✅ Complete documentation ([DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md))
 5. ✅ Volume management for persistent data
 6. ✅ Health checks and monitoring
 
@@ -517,7 +517,7 @@ Phương pháp Docker + noVNC cung cấp truy cập web ngay lập tức không 
 1. ✅ Dockerfile với VNC/noVNC setup
 2. ✅ docker-compose.yml cho deployment dễ dàng
 3. ✅ GitHub Actions workflow cho build tự động
-4. ✅ Documentation đầy đủ (DOCKER_GUIDE.md)
+4. ✅ Documentation đầy đủ ([DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md))
 5. ✅ Quản lý volume cho dữ liệu persistent
 6. ✅ Health checks và monitoring
 
