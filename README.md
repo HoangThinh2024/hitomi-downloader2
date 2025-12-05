@@ -10,22 +10,6 @@ English / [简体中文](./README.zh-CN.md) / [Tiếng Việt](./README.vi-VN.md
 
 Pre-compiled packages are available on the [Releases page](https://github.com/lanyeeee/hitomi-downloader/releases). Just download and use.
 
-### 🐳 Docker Deployment (NEW!)
-
-You can now run Hitomi Downloader in your browser using Docker! Perfect for:
-- Web-based access from any device
-- Server deployments
-- Remote usage
-
-```bash
-# Quick start with Docker Compose
-docker-compose up -d
-
-# Then open in browser: http://localhost:6080
-```
-
-📖 See [DOCKER_GUIDE.md](./DOCKER_GUIDE.md) for complete Docker deployment instructions.
-
 Enjoying this project? Feel free to support it with a GitHub Star⭐! Your support motivates me to keep updating and maintaining🙏
 
 ## ✨ Features
@@ -115,48 +99,6 @@ For detailed instructions including installation and uninstallation, see:
 - **[Ubuntu Build & Installation Guide](./UBUNTU_BUILD_GUIDE.md)** (English + Tiếng Việt)
 - [Linux Optimization Guide](./LINUX_OPTIMIZATION.md) (English)
 - [Hướng dẫn Tối ưu Linux](./LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
-
-## 🐳 Docker Deployment
-
-Run Hitomi Downloader as a web-accessible application! Access the full GUI through your browser using Docker.
-
-### Quick Start
-
-```bash
-# Using Docker Compose (recommended)
-docker-compose up -d
-
-# Or pull pre-built image
-docker pull ghcr.io/hoangthinh2024/hitomi-downloader2:latest
-docker run -d -p 6080:6080 ghcr.io/hoangthinh2024/hitomi-downloader2:latest
-```
-
-Then open your browser and navigate to: **http://localhost:6080**
-
-Default VNC password: `hitomi123`
-
-### Features
-- ✅ Full desktop GUI in browser
-- ✅ No installation required
-- ✅ Cross-platform (runs anywhere Docker runs)
-- ✅ Persistent storage with volumes
-- ✅ Easy deployment and scaling
-
-### Documentation
-- **[Docker Deployment Guide](./DOCKER_GUIDE.md)** - Complete setup and usage instructions
-- **[Web App Analysis](./WEB_APP_ANALYSIS.md)** - Technical details about web conversion
-
-### GitHub Container Registry
-
-Docker images are automatically built and published to GitHub Container Registry:
-```bash
-docker pull ghcr.io/hoangthinh2024/hitomi-downloader2:latest
-```
-
-Available tags:
-- `latest` - Latest build from main branch
-- `develop` - Latest build from develop branch
-- `v*.*.*` - Specific version tags
 
 ## 🌐 Adding a New Language
 
