@@ -513,12 +513,12 @@ The application is built with security in mind:
 - Uses Tauri for sandboxed environment
 - HTTPS/TLS for all network communications
 
-For security concerns, see [SECURITY.md](./SECURITY.md)
+For security concerns, see [SECURITY.md](../../SECURITY.md)
 
 ### Contributing
 
-Contributions are welcome! See [README.md](./README.md) for guidelines.
+Contributions are welcome! See [README.md](../../README.md) for guidelines.
 
 ### License
 
-See [LICENSE](./LICENSE) file for details.
+See [LICENSE](../../LICENSE) file for details.
