@@ -8,6 +8,7 @@ mod extensions;
 mod hitomi;
 mod hitomi_client;
 mod logger;
+mod system_info;
 mod types;
 mod utils;
 
@@ -48,6 +49,7 @@ pub fn run() {
             get_cover_data,
             get_synced_comic,
             clear_browsing_data,
+            get_system_info,
         ])
         .events(tauri_specta::collect_events![
             LogEvent,

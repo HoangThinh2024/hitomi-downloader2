@@ -415,3 +415,9 @@ pub fn clear_browsing_data(hitomi_client: State<HitomiClient>) -> CommandResult<
     tracing::info!("Browsing data cleared - HTTP clients reloaded");
     Ok(())
 }
+
+#[tauri::command(async)]
+#[specta::specta]
+pub fn get_system_info() -> crate::system_info::SystemInfo {
+    crate::system_info::SystemInfo::get()
+}

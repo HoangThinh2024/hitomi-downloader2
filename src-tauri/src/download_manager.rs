@@ -59,10 +59,21 @@ pub enum DownloadTaskState {
 
 impl DownloadManager {
     pub fn new(app: &AppHandle) -> Self {
+        // Optimize concurrency based on available CPU cores for better Linux performance
+        // On Ubuntu 24.04 LTS, use more aggressive concurrency for better throughput
+        let cpu_count = std::thread::available_parallelism()
+            .map(|n| n.get())
+            .unwrap_or(4);
+        
+        // Allow more concurrent comic downloads on systems with more cores
+        let comic_concurrency = (cpu_count / 2).clamp(2, 4);
+        // Scale image download concurrency with CPU cores for optimal performance
+        let img_concurrency = (cpu_count * 2).clamp(8, 16);
+        
         let manager = DownloadManager {
             app: app.clone(),
-            comic_sem: Arc::new(Semaphore::new(2)),
-            img_sem: Arc::new(Semaphore::new(4)),
+            comic_sem: Arc::new(Semaphore::new(comic_concurrency)),
+            img_sem: Arc::new(Semaphore::new(img_concurrency)),
             byte_per_sec: Arc::new(AtomicU64::new(0)),
             download_tasks: Arc::new(RwLock::new(HashMap::new())),
         };
