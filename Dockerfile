@@ -79,6 +79,8 @@ RUN apt-get update && apt-get install -y \
 RUN useradd -m -s /bin/bash appuser
 
 # Copy built application from builder
+# Note: Tauri outputs binary at src-tauri/target/release/<app-name>
+# If build fails, verify the binary name matches package.json "name" field
 COPY --from=builder /app/src-tauri/target/release/hitomi-downloader /usr/local/bin/
 
 # Create directories

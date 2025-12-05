@@ -2,6 +2,8 @@ version: '3.8'
 
 services:
   hitomi-downloader:
+    # For local development: build from Dockerfile
+    # For production: comment out 'build' and use pre-built image from ghcr.io
     build:
       context: .
       dockerfile: Dockerfile
