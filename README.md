@@ -79,6 +79,19 @@ pnpm install
 pnpm tauri build
 ```
 
+## 🐧 Linux Optimization
+
+This application is optimized for **Ubuntu 24.04 LTS** with specific performance enhancements:
+
+- **Adaptive Concurrency**: Automatically scales with CPU cores
+- **HTTP Connection Pooling**: Optimized for high-throughput downloads
+- **Memory Efficient**: Smart resource management
+- **Security Hardened**: Rust memory safety + sandboxed environment
+
+For detailed optimization guide, see:
+- [Linux Optimization Guide](./LINUX_OPTIMIZATION.md) (English)
+- [Hướng dẫn Tối ưu Linux](./LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
+
 ## 🌐 Adding a New Language
 
 Help with translating this project is welcome! If you want to add a new language, please refer to the implementation in [PR #1](https://github.com/lanyeeee/hitomi-downloader/pull/1). This PR shows how to add the localization files for `en-us`.

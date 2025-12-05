@@ -30,7 +30,7 @@ specta = { version = "=2.0.0-rc.20", features = ["serde_json"] }
 tauri-specta = { version = "=2.0.0-rc.20", features = ["derive", "typescript"] }
 specta-typescript = { version = "=0.0.7" }
 
-reqwest = { version = "0.12.19", default-features = false, features = ["default-tls", "system-proxy"] }
+reqwest = { version = "0.12.19", default-features = false, features = ["default-tls", "system-proxy", "stream", "gzip", "brotli", "deflate"] }
 reqwest-retry = { version = "0.7.0" }
 reqwest-middleware = { version = "0.4.2" }
 
@@ -40,7 +40,7 @@ tracing = { version = "0.1.41" }
 tracing-subscriber = { version = "0.3.19", features = ["json", "time", "local-time"] }
 tracing-appender = { version = "0.2.3" }
 notify = { version = "8.0.0" }
-tokio = { version = "1.45.1", features = ["full"] }
+tokio = { version = "1.45.1", features = ["full", "tracing"] }
 chrono = { version = "0.4.41" }
 regex-lite = { version = "0.1.6" }
 futures = { version = "0.3.31" }
@@ -57,6 +57,18 @@ walkdir = { version = "2.5.0" }
 
 [profile.release]
 strip = true
-lto = true
+lto = "fat"
 codegen-units = 1
 panic = "abort"
+opt-level = 3
+incremental = false
+
+# Linux-specific optimizations for Ubuntu 24.04 LTS
+# These settings ensure optimal performance on modern Linux systems
+[profile.release.package."*"]
+opt-level = 3
+
+# Dev profile optimizations for faster iteration
+[profile.dev]
+opt-level = 1
+incremental = true
