@@ -96,9 +96,9 @@ This application is optimized for **Ubuntu 24.04 LTS** with specific performance
 ```
 
 For detailed instructions including installation and uninstallation, see:
-- **[Ubuntu Build & Installation Guide](./UBUNTU_BUILD_GUIDE.md)** (English + Tiếng Việt)
-- [Linux Optimization Guide](./LINUX_OPTIMIZATION.md) (English)
-- [Hướng dẫn Tối ưu Linux](./LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
+- **[Ubuntu Build & Installation Guide](./docs/guides/UBUNTU_BUILD_GUIDE.md)** (English + Tiếng Việt)
+- [Linux Optimization Guide](./docs/optimization/LINUX_OPTIMIZATION.md) (English)
+- [Hướng dẫn Tối ưu Linux](./docs/optimization/LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
 
 ## 🌐 Adding a New Language
 

@@ -99,8 +99,8 @@ sudo apt-get install -y nodejs
 npm install -g pnpm
 
 # Clone và build
-git clone https://github.com/lanyeeee/hitomi-downloader.git
-cd hitomi-downloader
+git clone https://github.com/HoangThinh2024/hitomi-downloader2.git
+cd hitomi-downloader2
 pnpm install
 pnpm tauri build
 ```
@@ -310,11 +310,11 @@ Hiệu suất mong đợi:
 
 ## Tài nguyên Bổ sung
 
-- [README Chính](./README.md)
-- [Chính sách Bảo mật](./SECURITY.md)
-- [README Tiếng Anh](./README.md)
+- [README Chính](../../README.md)
+- [Chính sách Bảo mật](../../SECURITY.md)
+- [README Tiếng Anh](../../README.md)
 - [English Linux Optimization Guide](./LINUX_OPTIMIZATION.md)
-- [GitHub Issues](https://github.com/lanyeeee/hitomi-downloader/issues)
+- [GitHub Issues](https://github.com/HoangThinh2024/hitomi-downloader2/issues)
 
 ## Đóng góp
 

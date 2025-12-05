@@ -55,7 +55,7 @@ chmod +x clean.sh
 ./clean.sh
 ```
 
-### 3. `UBUNTU_BUILD_GUIDE.md` (12KB)
+### 3. [`UBUNTU_BUILD_GUIDE.md`](../guides/UBUNTU_BUILD_GUIDE.md) (12KB)
 **Mục đích / Purpose**: Hướng dẫn chi tiết về build, cài đặt, và gỡ bỏ
 
 **Nội dung / Content**:
@@ -74,7 +74,7 @@ chmod +x clean.sh
 **Thay đổi / Changes**:
 - Thêm `build-output/` để không commit các file build
 
-### 2. `CLEANUP_GUIDE.md`
+### 2. [`CLEANUP_GUIDE.md`](../guides/CLEANUP_GUIDE.md)
 **Thay đổi / Changes**:
 - Thêm hướng dẫn dùng `clean.sh` cho Linux/macOS
 - Cập nhật phần "Cách 1" với cả Windows và Linux
@@ -218,10 +218,10 @@ chmod +x clean.sh
 ## 📖 Documentation / Tài liệu
 
 ### Comprehensive Guides
-1. **UBUNTU_BUILD_GUIDE.md** - Hướng dẫn chi tiết build và cài đặt (English + Tiếng Việt)
-2. **CLEANUP_GUIDE.md** - Đã cập nhật với Linux instructions
-3. **README.md** - Đã cập nhật với Ubuntu build info
-4. **README.vi-VN.md** - Đã cập nhật với Ubuntu build info
+1. **[UBUNTU_BUILD_GUIDE.md](../guides/UBUNTU_BUILD_GUIDE.md)** - Hướng dẫn chi tiết build và cài đặt (English + Tiếng Việt)
+2. **[CLEANUP_GUIDE.md](../guides/CLEANUP_GUIDE.md)** - Đã cập nhật với Linux instructions
+3. **[README.md](../../README.md)** - Đã cập nhật với Ubuntu build info
+4. **[README.vi-VN.md](../../README.vi-VN.md)** - Đã cập nhật với Ubuntu build info
 
 ### Quick Start
 ```bash

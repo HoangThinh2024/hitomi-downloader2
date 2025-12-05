@@ -99,8 +99,8 @@ sudo apt-get install -y nodejs
 npm install -g pnpm
 
 # Clone and build
-git clone https://github.com/lanyeeee/hitomi-downloader.git
-cd hitomi-downloader
+git clone https://github.com/HoangThinh2024/hitomi-downloader2.git
+cd hitomi-downloader2
 pnpm install
 pnpm tauri build
 ```
@@ -310,10 +310,10 @@ This application is tested and optimized for:
 
 ## Additional Resources
 
-- [Main README](./README.md)
-- [Security Policy](./SECURITY.md)
-- [Vietnamese README](./README.vi-VN.md)
-- [GitHub Issues](https://github.com/lanyeeee/hitomi-downloader/issues)
+- [Main README](../../README.md)
+- [Security Policy](../../SECURITY.md)
+- [Vietnamese README](../../README.vi-VN.md)
+- [GitHub Issues](https://github.com/HoangThinh2024/hitomi-downloader2/issues)
 
 ## Contributing
 
