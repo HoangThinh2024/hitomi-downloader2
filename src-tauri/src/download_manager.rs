@@ -66,9 +66,9 @@ impl DownloadManager {
             .unwrap_or(4);
         
         // Allow more concurrent comic downloads on systems with more cores
-        let comic_concurrency = (cpu_count / 2).max(2).min(4);
+        let comic_concurrency = (cpu_count / 2).clamp(2, 4);
         // Scale image download concurrency with CPU cores for optimal performance
-        let img_concurrency = (cpu_count * 2).max(8).min(16);
+        let img_concurrency = (cpu_count * 2).clamp(8, 16);
         
         let manager = DownloadManager {
             app: app.clone(),
