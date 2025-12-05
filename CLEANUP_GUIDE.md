@@ -14,8 +14,14 @@ Dự án này sử dụng nhiều dependencies và tạo ra các build artifacts
 
 ### Cách 1: Sử dụng script tự động (Khuyến nghị)
 
+#### Windows (PowerShell):
 ```powershell
 .\clean.ps1
+```
+
+#### Linux/macOS (Bash):
+```bash
+./clean.sh
 ```
 
 Script này sẽ tự động:
