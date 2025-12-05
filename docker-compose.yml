@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  hitomi-downloader:
+    # For local development: build from Dockerfile
+    # For production: comment out 'build' and use pre-built image from ghcr.io
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/hoangthinh2024/hitomi-downloader2:latest
+    container_name: hitomi-downloader-web
+    ports:
+      # noVNC web interface (access via browser)
+      - "6080:6080"
+      # VNC direct connection (optional)
+      - "5901:5901"
+    volumes:
+      # Persistent storage for app data
+      - hitomi-data:/home/appuser/.local/share/hitomi-downloader
+      # Downloaded files
+      - ./downloads:/home/appuser/Downloads
+    environment:
+      # Display settings
+      - DISPLAY=:1
+      - VNC_PORT=5901
+      - NOVNC_PORT=6080
+      # Timezone
+      - TZ=Asia/Ho_Chi_Minh
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  hitomi-data:
+    driver: local
+
+networks:
+  default:
+    name: hitomi-network
