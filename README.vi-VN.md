@@ -106,6 +106,13 @@ pnpm tauri build
 - [Hướng dẫn Tối ưu Linux](./docs/optimization/LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
 - [Linux Optimization Guide](./docs/optimization/LINUX_OPTIMIZATION.md) (English)
 
+## 📚 Tài liệu
+
+Để xem hướng dẫn đầy đủ, mẹo tối ưu hóa và tài liệu kỹ thuật, hãy xem thư mục **[docs/](./docs/)**:
+- **[Hướng dẫn Cài đặt & Thiết lập](./docs/guides/)** - Docker, Ubuntu build, dọn dẹp
+- **[Tối ưu hóa Hiệu suất](./docs/optimization/)** - Tối ưu Linux, xuất PDF
+- **[Tổng kết Kỹ thuật](./docs/summary/)** - Chi tiết triển khai và phân tích
+
 ## 🌐 Thêm ngôn ngữ mới
 
 Chào mừng sự giúp đỡ trong việc dịch dự án này! Nếu bạn muốn thêm ngôn ngữ mới, vui lòng tham khảo việc triển khai trong [PR #1](https://github.com/lanyeeee/hitomi-downloader/pull/1). PR này cho thấy cách thêm các tệp bản địa hóa cho `en-us`.

@@ -158,6 +158,13 @@ Available tags:
 - `develop` - Latest build from develop branch
 - `v*.*.*` - Specific version tags
 
+## 📚 Documentation
+
+For comprehensive guides, optimization tips, and technical documentation, see the **[docs/](./docs/)** directory:
+- **[Setup & Installation Guides](./docs/guides/)** - Docker, Ubuntu build, cleanup
+- **[Performance Optimization](./docs/optimization/)** - Linux optimization, PDF export
+- **[Technical Summaries](./docs/summary/)** - Implementation details and analysis
+
 ## 🌐 Adding a New Language
 
 Help with translating this project is welcome! If you want to add a new language, please refer to the implementation in [PR #1](https://github.com/lanyeeee/hitomi-downloader/pull/1). This PR shows how to add the localization files for `en-us`.
