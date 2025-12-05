@@ -1,0 +1,50 @@
+# Git
+.git
+.gitignore
+.github
+
+# Dependencies
+node_modules
+target
+dist
+.pnpm-store
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.log
+*.tmp
+.cache
+
+# Documentation (will be copied separately if needed)
+*.md
+!README.md
+!LICENSE
+
+# Test files
+tests
+*.test.*
+*.spec.*
+
+# CI/CD (not needed in image)
+.github/workflows
+
+# Local development
+.env.local
+.env.development
+downloads
+*.local
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
