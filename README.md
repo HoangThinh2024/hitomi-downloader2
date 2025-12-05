@@ -79,7 +79,7 @@ pnpm install
 pnpm tauri build
 ```
 
-## 🐧 Linux Optimization
+## 🐧 Linux/Ubuntu Build & Installation
 
 This application is optimized for **Ubuntu 24.04 LTS** with specific performance enhancements:
 
@@ -87,8 +87,16 @@ This application is optimized for **Ubuntu 24.04 LTS** with specific performance
 - **HTTP Connection Pooling**: Optimized for high-throughput downloads
 - **Memory Efficient**: Smart resource management
 - **Security Hardened**: Rust memory safety + sandboxed environment
+- **Automated Build & Cleanup**: Build script that keeps only the app, removes build artifacts (~13-15GB saved)
 
-For detailed optimization guide, see:
+### Quick Build on Ubuntu
+
+```bash
+./build-ubuntu.sh
+```
+
+For detailed instructions including installation and uninstallation, see:
+- **[Ubuntu Build & Installation Guide](./UBUNTU_BUILD_GUIDE.md)** (English + Tiếng Việt)
 - [Linux Optimization Guide](./LINUX_OPTIMIZATION.md) (English)
 - [Hướng dẫn Tối ưu Linux](./LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
 

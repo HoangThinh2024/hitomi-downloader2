@@ -85,7 +85,7 @@ pnpm install
 pnpm tauri build
 ```
 
-## 🐧 Tối ưu hóa Linux
+## 🐧 Build và Cài đặt trên Linux/Ubuntu
 
 Ứng dụng này được tối ưu hóa cho **Ubuntu 24.04 LTS** với các cải tiến hiệu suất cụ thể:
 
@@ -93,8 +93,16 @@ pnpm tauri build
 - **HTTP Connection Pooling**: Tối ưu cho tải xuống thông lượng cao
 - **Hiệu quả Bộ nhớ**: Quản lý tài nguyên thông minh
 - **Bảo mật Được tăng cường**: An toàn bộ nhớ Rust + môi trường sandbox
+- **Build & Dọn dẹp Tự động**: Script build chỉ giữ lại app, xóa các file build (~13-15GB được tiết kiệm)
 
-Để xem hướng dẫn tối ưu hóa chi tiết:
+### Build nhanh trên Ubuntu
+
+```bash
+./build-ubuntu.sh
+```
+
+Để xem hướng dẫn chi tiết bao gồm cài đặt và gỡ bỏ:
+- **[Hướng dẫn Build & Cài đặt Ubuntu](./UBUNTU_BUILD_GUIDE.md)** (Tiếng Việt + English)
 - [Hướng dẫn Tối ưu Linux](./LINUX_OPTIMIZATION.vi-VN.md) (Tiếng Việt)
 - [Linux Optimization Guide](./LINUX_OPTIMIZATION.md) (English)
 
