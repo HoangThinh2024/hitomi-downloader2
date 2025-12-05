@@ -173,7 +173,6 @@ fn create_api_client(app: &AppHandle) -> ClientWithMiddleware {
         .pool_max_idle_per_host(10)
         .pool_idle_timeout(Duration::from_secs(90))
         .tcp_keepalive(Duration::from_secs(60))
-        .http2_adaptive_window(true)
         .build()
         .unwrap();
 
@@ -195,7 +194,6 @@ fn create_img_client(app: &AppHandle) -> ClientWithMiddleware {
         .pool_max_idle_per_host(20)
         .pool_idle_timeout(Duration::from_secs(120))
         .tcp_keepalive(Duration::from_secs(75))
-        .http2_adaptive_window(true)
         .tcp_nodelay(true)
         .build()
         .unwrap();
@@ -212,7 +210,6 @@ fn create_cover_client(app: &AppHandle) -> Client {
         .pool_max_idle_per_host(15)
         .pool_idle_timeout(Duration::from_secs(90))
         .tcp_keepalive(Duration::from_secs(60))
-        .http2_adaptive_window(true)
         .build()
         .unwrap()
 }
