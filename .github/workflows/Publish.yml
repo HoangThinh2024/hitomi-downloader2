@@ -121,59 +121,8 @@ jobs:
           name: linux-assets
           path: artifacts/*
 
-  macos-build:
-    needs: get-version
-    env:
-      VERSION: ${{ needs.get-version.outputs.VERSION }}
-    outputs:
-      VERSION: ${{ env.VERSION }}
-    strategy:
-      fail-fast: false
-      matrix:
-        arch: [ aarch64, x86_64 ]
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-
-      - name: Install Rust stable
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: ${{ matrix.arch }}-apple-darwin
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      - name: Install frontend dependencies
-        run: pnpm install
-
-      - name: Build tauri app
-        uses: tauri-apps/tauri-action@v0
-        with:
-          args: --target ${{ matrix.arch }}-apple-darwin
-
-      - name: Create artifacts directory
-        run: mkdir -p artifacts
-
-      - name: Copy dmg to release assets
-        env:
-          ARCH_ALIAS: ${{ matrix.arch == 'x86_64' && 'x64' || matrix.arch }}
-        run: cp src-tauri/target/${{ matrix.arch }}-apple-darwin/release/bundle/dmg/${{ env.REPO_NAME }}_${{ env.VERSION }}_${{ env.ARCH_ALIAS }}.dmg artifacts/${{ env.REPO_NAME }}_${{ env.VERSION }}_macos_${{ matrix.arch }}.dmg
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: macos-assets-${{ matrix.arch }}
-          path: artifacts/*
-
   create-release:
-    needs: [ windows-build, linux-build, macos-build ]
+    needs: [ windows-build, linux-build]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -189,19 +138,7 @@ jobs:
         with:
           name: linux-assets
           path: artifacts/linux
-
-      - name: Download macOS aarch64 assets
-        uses: actions/download-artifact@v4
-        with:
-          name: macos-assets-aarch64
-          path: artifacts/macos-aarch64
-
-      - name: Download macOS x86_64 assets
-        uses: actions/download-artifact@v4
-        with:
-          name: macos-assets-x86_64
-          path: artifacts/macos-x86_64
-
+          
       - name: List files in artifacts directory
         run: ls -R artifacts
 
